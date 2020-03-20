@@ -154,6 +154,8 @@
         this.priceBlock.innerText = this.sum
     }
  }
-
- catalog.construct (cart) //тут происходит создание объекта и вся прочая магия
- cart.construct ()
+export default function app(){
+    console.log("it's alive! Alive!")
+    catalog.construct (cart) //тут происходит создание объекта и вся прочая магия
+    cart.construct ()
+}
