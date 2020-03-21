@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+</head>
+<body>
+    <nav class="nav">
+        <div class="">
+            <button class="btn open" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Корзина
+            </button>
+            <button class="close">Закрыть</button>
+            <div class="wrap displyNone">
+                <table class="textBasket">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2" scope="row">Итого:</th>
+                            <td colspan="3">
+                                <span class="total textSpan">0</span>
+                                <i class="fas fa-ruble-sign"></i>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </nav>
+    <div class="center">
+    <div class="block ">
+        <div class="productName">Товар - 1</div>
+        <img src="Product_1.png" alt="Product">
+        <button class="info">Подробнее</button>
+        <button type="button" 
+                class="btn btn-success mt-3 toBasketBtn"
+                data-id="1"
+                data-price="120"
+                data-name="Товар 1"
+        >
+        Купить $120
+    </button>
+    </div>
+    <div class="block ">
+        <div class="productName">Товар - 2</div>
+        <img src="Product_2.png" alt="Product">
+        <button class="info">Подробнее</button>
+        <button type="button" 
+                class="btn btn-success mt-3 toBasketBtn"
+                data-id="2"
+                data-price="160"
+                data-name="Товар 2"
+        >
+        Купить $160
+    </button>
+    </div>
+    <div class="block ">
+        <div class="productName">Товар - 3</div>
+        <img src="Product_3.png" alt="Product">
+        <button class="info">Подробнее</button>
+        <button type="button" 
+                class="btn btn-success mt-3 toBasketBtn"
+                data-id="3"
+                data-price="140"
+                data-name="Товар 3"
+        >
+        Купить $140
+    </button>
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
