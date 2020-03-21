@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 calc(50% - 570px);
+}
+ 
+.center {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 0 calc(50% - 570px);
+}
+
+/*Расположение кнопок навигации */
+.nav {
+    float: right;
+}
+
+/*Кнопки на сайте*/
+button {
+    background-color: rgb(241, 109, 127);
+    color: rgb(234, 234, 234);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.38px;
+    padding: 0px 15px;
+    border-radius: 3px 0px 0px 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230);
+    border-image: initial;
+    transition: all 1s ease 0s;
+    margin: 15px;
+}
+
+.desc {
+    font-size: 16px;
+    color: #4d4d4d;
+}
+
+/*Блок каждой картинки*/
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 263px;
+    position: relative;
+    margin-bottom: 39px;
+    border-radius: 15px;
+        -webkit-transition: 1s;
+    transition: 1s;
+}
+/*Блок каждой картинки НАВЕДЕНИЕ*/
+.block:hover {
+-webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+}
+
+/*Загаловок имени продукта*/
+.productName {
+    color: #4d4d4d;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.textSpan {
+    color: #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 17px;
+}
+
+.textBasket {
+    color: #342f30;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 17px;
+}
+.desc {
+    display: inline-block;
+}
+
+/*Окно текста */
+.wrap {
+    width: 200px;
+    height: 300px;
+    background-color: #ffffff;
+    font-style: italic;
+}
+
+.displyNone {
+    display: none;
+}
+/*Эффект при нажатии на кнопку "ОТКРЫТЬ"*/
+.openAnim {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    -webkit-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+    -webkit-animation: rotate-hor-center 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+        animation: rotate-hor-center 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes rotate-hor-center {
+    0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    }
+    100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+    }
+}
+
+@keyframes rotate-hor-center {
+    0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    }
+    100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+    }
+}
+
+/*Эффект при нажатии на кнопку "Закрыть"*/
+.closeAnim {
+    width: auto;
+    height: auto;
+    margin: 10px;
+	-webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes flip-horizontal-bottom {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+    }
+    100% {
+      -webkit-transform: rotateX(-180deg);
+              transform: rotateX(-180deg);
+    }
+  }
+  @keyframes flip-horizontal-bottom {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+    }
+    100% {
+      -webkit-transform: rotateX(-180deg);
+              transform: rotateX(-180deg);
+    }
+  }
