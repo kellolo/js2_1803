@@ -27,5 +27,10 @@ module.exports = {
     new htmlPlugin({
       template: "./src/public/index.html"
     })
-  ]
+  ],
+  devServer: {
+    open: true,
+    hot: true,
+    port: 3000
+  }
 };

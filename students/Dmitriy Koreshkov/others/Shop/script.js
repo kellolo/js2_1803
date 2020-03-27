@@ -1,60 +1,52 @@
 "use strict";
-/*
-const goods = [
-  { title: "Shirt", price: 150 },
-  { title: "Socks", price: 50 },
-  { title: "Jacket", price: 350 },
-  { title: "Shoes", price: 250 }
-];
 
-const renderGoodsItem = (title, price) => {
-  return `<div class="goods-item"><h3 class="goods-title">​${title}​</h3><p class="goods-price">​${price}​</p></div>`;
-};
+function makeGETRequest(url,callback){
+  let xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4){
+      callback(xhr.responseText); 
+    }
+  }
+  xhr.open("GET", url, true);
+  xhr.send();
+}
 
-const renderGoodsList = list => {
-  let goodsList = list.map(item => renderGoodsItem(item.title, item.price));
-  console.log(goodsList);
-  document.querySelector(".goods-list").innerHTML = goodsList.join("");
-};
-
-renderGoodsList(goods);
-*/
+const API_URL = "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses";
 
 // класс товара
 class GoodsItem {
   constructor(title, price) {
-    this.title = title;
+    this.product_name = title;
     this.price = price;
   }
   render() {
-    return `<div class="goods-item"><h3 class="goods-title">​${this.title}​</h3><p class="goods-price">​${this.price}​</p></div>`;
+    return `<div class="goods-item"><h3 class="goods-title"></h3>${this.product_name}</h3><p class="goods-price">${this.price}</p></div>`;
   }
 }
-
 // класс список товара
 class GoodsList {
   constructor() {
     this.goods = [];
   }
-  fetchGoods() {
-    this.goods = [
-      { title: "Shirt", price: 150 },
-      { title: "Socks", price: 50 },
-      { title: "Jacket", price: 350 },
-      { title: "Shoes", price: 250 }
-    ];
+  fetchGoods(cb) {
+    makeGETRequest (`${API_URL}/catalogData.json`, (goods) => {
+      this.goods = JSON.parse(goods);
+      cb();
+    })
   }
+ 
   render() {
     let listHtml = "";
     this.goods.forEach(good => {
-      const goodItem = new GoodsItem(good.title, good.price);
+      const goodItem = new GoodsItem(good.product_name, good.price);
       listHtml += goodItem.render();
       console.log(listHtml);
     });
     document.querySelector(".goods-list").innerHTML = listHtml;
   }
+
 }
 
 const list = new GoodsList();
-list.fetchGoods();
-list.render();
+list.fetchGoods(() => {list.render();
+})
