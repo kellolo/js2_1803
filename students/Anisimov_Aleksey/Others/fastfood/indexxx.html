@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form action="#" class="fastfood">
+    <fieldset><legend>Choose burger size bro</legend>
+        <label for="smallSize"><input type="radio" id="smallSize" name="burgerSize" checked data-price="50" data-calories="20"> small (50$ 20 cal)</label>
+        <label for="bigSize"><input type="radio" id="bigSize" name="burgerSize" data-price="100" data-calories="40"> big(100$ 40 сal)</label>
+    </fieldset>
+    <fieldset><legend>Choose burger content</legend>
+        <label for="cheese"><input type="radio" id="cheese" name="burgerStuffing" checked data-price="10" data-calories="20"> cheese (+10$ 20 cal)</label>
+        <label for="salad"><input type="radio" id="salad" name="burgerStuffing" data-price="20" data-calories="5"> salad (+20$ 5 cal)</label>
+        <label for="potato"><input type="radio" id="potato" name="burgerStuffing" data-price="15" data-calories="10"> potato (+15$ 10 cal)</label>
+    </fieldset>
+    <fieldset><legend>Choose topping for burger bro</legend>
+        <label for="flavor"><input type="checkbox" id="flavor" name="burgerTopping" checked data-price="15" data-calories="0"> flavor (+15$ 0 cal)</label>
+        <label for="souce"><input type="checkbox" id="souce" name="burgerTopping" data-price="20" data-calories="5"> souce(+20$ 5 сal)</label>
+    </fieldset>
+    <fieldset class="total">
+
+    </fieldset>
+</form>
+<script src="js/script.js"></script>
+</body>
+</html>

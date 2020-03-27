@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+
+        <fieldset>
+            <p>Choose size</p>
+            <label>
+                <input type="radio" name="size" value="big" data-price="30" data-calories="100" checked> Big
+            </label>
+            <label>
+                <input type="radio" name="size" value="small" data-price="20" data-calories="50"> Small
+            </label>
+        </fieldset>
+    
+        <fieldset>
+            <p>Choose Add</p>
+            <label>
+                <input type="radio" name="add" value="cheese" data-price="5" data-calories="20" checked> Cheese
+            </label>
+            <label>
+                <input type="radio" name="add" value="salad" data-price="10" data-calories="10"> Salad
+            </label>
+            <label>
+                <input type="radio" name="add" value="potato"  data-price="5" data-calories="30"> Potato
+            </label>
+        </fieldset>
+    
+        <fieldset>
+            <p>If u wish a Toping</p>
+            <label>
+                <input type="checkbox" name="toping" value="flavouring"  data-price="2" data-calories="5"> Flavouring
+            </label>
+            <label>
+                <input type="checkbox" name="toping" value="yogurt"  data-price="80" data-calories="15"> Yogurt
+            </label>
+    
+        </fieldset>
+    </form>
+    <button id="ok-button">Add</button>
+
+    <div>
+        <p>Цена:  <span id="price"></span></p>
+        <p>Калорийность:  <span id="cals"></span></p>
+    </div>
+
+    <script>
+        window.onload = () => {
+            document.querySelector ('#ok-button'). addEventListener ('click', function () {
+                let burger = new Burger ('size', 'add', 'toping')
+                // burger.showSum ('#price', '#cals')
+            })
+        }
+
+
+        class Burger {
+            constructor (size, add, topings) {
+                this.size = new Param (this._select (size))
+                this.add = new Param (this._select (add))
+                this.topings = this._handleCollection (topings)
+            }
+            _select (attrName) {
+                return document.querySelector (`input[name="${attrName}"]:checked`)
+            }
+            _selectCollection (attrName) {
+                return [...document.querySelectorAll (`input[name="${attrName}"]:checked`)]
+            }
+
+            _handleCollection (attrName) {
+                let arr = this._selectCollection (attrName)
+                let rez = []
+                arr.forEach (el => {
+                    rez.push (new Param (el))
+                })
+                return rez
+            }
+
+            //calc price
+            //calc calories
+            // вывести
+        }
+
+        class Param {
+            constructor (selectedFormElement) {
+                this.name = selectedFormElement.value
+                this.price = +selectedFormElement.dataset.price
+                this.calories = +selectedFormElement.dataset.calories
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Human {
+            constructor(name, age, married = false) {
+                this.name = name
+                this.age = age
+                this.married = married
+            }
+            goWork() {
+                console.log(`${this.name} goes work`)
+            }
+        }
+
+        class Female extends Human {
+            constructor(name, age, married = false) {
+                super(name, age, married)
+                this.pregnant = false
+            }
+            becomePregnant() {
+                if(!this.pregnant) {
+                    console.log(this.name + ' is now pregnant'); 
+                    this.pregnant = true;
+                 }else {
+                    console.log(this.name + ' is already pregnant')
+                 }
+            }
+        }
+
+        class Male extends Human {}
+
+        let oleg = new Male('Oleg', 23, true)
+        let olga = new Female('Olga', 22, true)
+        // let arr = [1, 2]
+        // let arr2 = new Array(1, 2)
+
+        // let str = '123'
+        // let str = new String('123')
+
+        /*
+            1 - num
+            2 - str
+            3 - boolean
+            4 - undefined
+            5 - null
+            6 - object
+            7 - symbol
+        */
+
+        // 123 + '456' === '123456'// 123 => '123'
+
+        // new String(123) + 456 // String{PrimitiveValue: '123'} + '456'
+
+        // 123 * '10' === 1230
+
+        // 123 * new Number('10') // 123 * Number{PrimitiveValue: 10}
+
+        // 123 * 'qwe' // err
+
+
+        //new Array(1, 2, 3)
+
+        // function arr (a, b, c) {
+        //     return {
+        //         0: a,
+        //         1: b,
+        //         2: c
+        //     }
+        // }
+
+        
+    </script>
+</body>
+</html>

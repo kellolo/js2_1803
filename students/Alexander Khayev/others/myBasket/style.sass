@@ -1,0 +1,96 @@
+.carousel
+  width: 100%
+  height: 50vw
+  overflow: hidden
+  &-inner
+    height: 100%
+  &-item
+    height: 100%
+    & > img
+      object-fit: cover
+      max-width: 100%
+      min-height: 100%
+
+
+body
+  font-size: 14px
+
+.body
+  display: flex
+
+.product
+  min-height: 260px
+  margin: 10px
+  width: 150px
+  border: 1px solid silver
+  border-radius: 10px
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  &__name
+    background-color: cornsilk
+    padding: 10px
+  &__img
+    width: 100%
+  &__info
+    margin: 0 10px
+    display: none
+  & > [role="also"]
+    margin: 10px
+    background-color: #ffb
+    &:after
+      content: "Купить"
+
+.price
+  font-size: 15px
+
+.show-info
+  & > .product__info
+    display: flex
+  & > [role="also"]
+    background-color: #bfb
+    &:after
+      content: "В корзине"
+
+
+.basket
+  min-width: 150px
+  & > h2
+    font-size: 20px
+    background-color: #bbf
+    padding: 5px
+  & > h3
+    font-size: 16px
+    padding: 5px
+
+.carousel
+  max-height: 200px
+  &-item
+  &-item.active
+    order: 2
+  & .item-in
+    margin-left: 0%
+    animation: inSlider 1s
+    display: block
+  & .item-out
+    margin-left: -101%
+    animation: outSlider 1s
+    //&.active
+      //margin-left: 0%
+
+@keyframes inSlider
+  from
+    display: block
+    margin-left: 101%
+  to
+    margin-left: 0%
+    display: block
+
+@keyframes outSlider
+  from
+    display: block
+    margin-left: 0%
+  to
+    display: block
+    margin-left: -101%
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamburger</title>
+</head>
+<body>
+    <h2>Выбрать гамбургер</h2>
+
+    <div class="burger">
+        <div class="burger__size" style="border: 1px solid black;">
+            <label><input type="radio" name='size' data-size="small">Маленький (50 рублей, 20 калорий)</label>
+            <label><input type="radio" name='size' data-size="big">Большой (100 рублей, 40 калорий)</label>
+        </div>
+        <div class="burger__stuffing" style="border: 1px solid black;">
+            <label><input type="radio" name='stuffing' data-stuffing="cheese">С сыром (+10 рублей, +20 калорий)</label>
+            <label><input type="radio" name='stuffing' data-stuffing="salat">С салатом (+20 рублей, +5 калорий)</label>
+            <label><input type="radio" name='stuffing' data-stuffing="potato">С картофелем (+15 рублей, +10 калорий)</label>
+        </div>
+        <div class="burger__topping" style="border: 1px solid black;">
+            <label><input type="checkbox" name='topping' data-topping="prip">посыпать приправой (+15 рублей, +0 калорий) </label>
+            <label><input type="checkbox" name='topping' data-topping="maz">полить майонезом (+20 рублей, +5 калорий)</label>
+        </div>
+        <div class="btn">Собрать бургер</div>     
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

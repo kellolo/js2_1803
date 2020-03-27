@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fastfood fieldset {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,111 @@
+#slides1, #slides2
+  position: relative
+  height: 150px
+  padding: 0px
+  margin: 0px
+  list-style-type: none
+  overflow: hidden
+
+.slide
+  text-align: center
+  position: absolute
+  left: 0px
+  top: 0px
+  width: 100%
+  height: 100%
+  opacity: 0
+  z-index: 1
+  -webkit-transition: opacity 2s
+  -moz-transition: opacity 2s
+  -o-transition: opacity 2s
+  transition: opacity 2s
+
+.active
+  opacity: 1
+
+.fromRight
+  opacity: 1
+  z-index: 2
+  animation: aniFromRight 2s
+
+.toLeft
+  opacity: 0
+  animation: aniToLeft 2s
+
+.fromLeft
+  opacity: 1
+  z-index: 2
+  animation: aniFromLeft 2s
+
+.toRight
+  opacity: 1
+  z-index: 2
+  animation: aniToRight 2s
+
+@keyFrames aniFromRight
+  from
+    transform: translateX(100%)
+
+@keyFrames aniToLeft
+  from
+    opacity: 1
+  to
+    transform: translateX(-100%)
+    opacity: 1
+
+@keyFrames aniFromLeft
+  from
+    transform: translateX(-100%)
+
+@keyFrames aniToRight
+  from
+    opacity: 1
+  to
+    transform: translateX(100%)
+    opacity: 1
+
+.slide
+  font-size: 40px
+  padding: 40px
+  box-sizing: border-box
+  background: #333
+  color: #fff
+  &:nth-of-type(1)
+    background: red
+  &:nth-of-type(2)
+    background: orange
+  .slide:nth-of-type(3)
+    background: green
+  &:nth-of-type(4)
+    background: blue
+  &:nth-of-type(5)
+    background: purple
+
+
+
+[role="left"], [role="right"]
+  z-index: 3
+  position: absolute
+  width: 5%
+  height: 100%
+  opacity: 0.2
+  transition: all 1s
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 28px
+  font-weight: 900
+  background-color: white
+
+[role="left"]
+  left: 0
+
+[role="right"]
+  right: 0
+
+[role="left"]:hover
+  opacity: 0.8
+
+[role="right"]:hover
+  opacity: 0.8
+

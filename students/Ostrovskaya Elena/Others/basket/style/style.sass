@@ -1,0 +1,162 @@
+$colorBorder: #ccc4c4
+$colorSite: #e24f63
+$colorPrice: #c04040
+
+*
+    margin: 0
+    padding: 0
+
+.catalog
+    clear: both
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+.product
+    flex-basis: 25%
+    width: 300px
+    border: 1px solid $colorBorder
+    padding: 20px
+    margin: 15px 
+
+    &__img
+        width: 100%
+
+    &__button
+        border: 2px solid $colorSite
+        padding: 5px 15px
+        width: 150px
+        text-align: center
+        margin: 0 auto
+        border-radius: 15px
+        color: $colorSite
+        font-size: 20px
+        &:hover
+            box-shadow: 0px 0px 2px #791d43
+
+    & p
+        margin: 10px 0
+
+    &__name
+        text-align: center
+        font-size: 18px
+
+    &__price
+        text-align: right
+        font-size: 25px
+        color: $colorPrice
+
+.cart
+    position: relative
+    font-size: 40px
+    float: right
+    text-align: center
+    color: #6b6767
+    margin: 30px
+
+    &__count
+        position: absolute
+        width: 26px
+        height: 26px
+        border-radius: 26px
+        background-color: red
+        top: -10px
+        right: -10px
+        color: white
+        font-size: 20px
+        line-height: 26px
+        display: none
+
+    &:hover > i
+        color: $colorSite
+
+.drop
+    display: none
+    padding: 15px
+    padding-top: 65px
+    width: 500px
+    background-color: white
+    position: absolute
+    top: 40px
+    right: 40px
+    border: 2px solid $colorBorder
+
+    &:hover
+        color: #6b6767
+    &__close
+        border: 2px solid $colorBorder
+        width: 40px
+        height: 40px
+        border-radius: 20px
+        font-size: 35px
+        line-height: 45px
+        text-align: center
+        position: absolute
+        right: 10px
+        top: 10px
+        &:hover
+            color: $colorSite
+            border: 2px solid $colorSite
+
+
+        
+
+
+.goods
+    display: flex
+    border-bottom: 1px solid $colorBorder
+    padding: 5px
+
+    &:hover
+        background-color: rgba(0,0,0,0.1)
+
+    &__img
+        width: 100px
+        height: 100px
+        border: 2px solid $colorBorder
+        margin: 6px
+
+    &__text
+        padding: 10px
+        height: 100px
+        flex-grow: 1
+        display: flex
+        flex-wrap: wrap
+        align-content: space-evenly
+
+    
+    &__name
+        font-size: 20px
+    &__price
+        font-size: 25px
+        margin: 0 auto
+        color: $colorPrice
+    
+    &__count
+        height: 30px
+        margin: auto 0
+        font-size: 25px
+        width: 50px
+        color: #6b6767
+        padding: 3px
+
+    &__number
+        margin: auto 5px
+        display: flex
+        font-size: 25px
+
+    &__delete
+        margin: auto 10px
+        font-size: 25px
+
+        &:hover
+            color: $colorSite
+
+    &__total
+        padding: 5px
+        display: flex
+        justify-content: space-between   
+        font-size: 25px  
+
+
+

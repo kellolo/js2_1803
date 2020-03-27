@@ -1,0 +1,38 @@
+*
+  padding: 0
+  margin: 0
+
+body
+  font-size: 18px
+
+header
+  display: flex
+  height: 48px
+  background: linear-gradient(0deg, gray, silver)
+  padding: 10px
+  justify-content: flex-end
+  & > button
+    padding-left: 20px
+    padding-right: 20px
+    border-radius: 10px
+    border-width: 0
+
+.goods
+  &-list
+    display: flex
+    flex-direction: column
+    background-color: #efefef
+    border: 1px solid gray
+    position: absolute
+    min-width: 300px
+    right: 10px
+  &-item
+    line-height: 2.5rem
+    display: flex
+    justify-content: space-between
+    padding: 5px
+    &:hover
+      background: linear-gradient(90deg, #afafaf, #f0f0f0)
+    & > p::after
+      content: "$"
+      margin-left: 10px

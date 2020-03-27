@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamburger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Собрать гамбургер</h1>
+    <form action="">
+        <fieldset> Виды гамбургеров (обязательно выбрать):
+            <label for="">
+                <input class="viewSmall" type="radio" name="Gamburger" checked>  Маленький (50 рублей, 20 калорий)
+            </label>
+            <label for="">
+                <input class="viewBig" type="radio" name="Gamburger"> Большой (100 рублей, 40 калорий)
+            </label>
+        </fieldset>
+    </form>
+    <form action="">
+        <fieldset> Виды начинок (обязательно выбрать):
+            <label for="">
+                <input class="cheese" type="radio" name="Filling" checked> С сыром (+10 рублей, +20 калорий)
+            </label>
+            <label for="">
+                <input class="salad" type="radio" name="Filling"> С салатом (+20 рублей, +5 калорий)
+            </label>
+            <label for="">
+                <input class="potatoes" type="radio" name="Filling"> С картофелем (+15 рублей, +10 калорий)
+            </label>
+        </fieldset>
+    </form>
+    <form action="">
+        <fieldset> Дополнительно:
+            <label for="">
+                <input type="checkbox" class="seasoning" name="Filling"> Посыпать приправой (+15 рублей, +0 калорий)
+            </label>
+            <label for="">
+                <input type="checkbox" class="mayonnaise" name="Filling"> Полить майонезом (+20 рублей, +5 калорий)
+            </label>
+         </fieldset>
+    </form>
+    <button class="button">Стоимость и каллории</button>
+    <form action="">
+        <fieldset> Стоимость
+            <input class="cost" type="text" placeholder="0">
+        </fieldset>
+        <fieldset> Калорийность
+            <input class="cal" type="text" placeholder="0">
+        </fieldset>
+
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>

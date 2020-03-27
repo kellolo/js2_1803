@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // text >>> JSON
+        // HTML >>> XML
+
+        let obj = {a: 12, b: 'string some', c: true, d: [1, 'str', false]}
+        // js >> JSON
+        let objJSON = JSON.stringify(obj)
+        console.log(objJSON)
+        
+        //JSON >> js
+        let againJSobj = JSON.parse(objJSON)
+        console.log(againJSobj)
+
+        
+    </script>
+</body>
+</html>

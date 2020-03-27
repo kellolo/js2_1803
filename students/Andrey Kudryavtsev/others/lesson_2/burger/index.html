@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        .result {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .calories,
+        .price {
+            font-weight: bold;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <fieldset class="container">
+        <form action="#" id="burgerForm">
+
+            <h2>Составь свой бургер</h2>
+            <fieldset>
+                <h3>Выберите размер бургера</h3>
+                <label>
+                    <input type="radio" name="Size" value="big"> Большой (100 рублей, 40 калорий)
+                </label>
+                <label>
+                    <input type="radio" name="Size" value="small"> Маленький (50 рублей, 20 калорий)
+                </label>
+            </fieldset>
+            <fieldset>
+                <h3>Выберите начинку бургера</h3>
+                <label>
+                    <input type="radio" name="Filling" value="chees"> С сыром (+10 рублей, +20 калорий)
+                </label>
+                <label>
+                    <input type="radio" name="Filling" value="salad"> С салатом (+20 рублей, +5 калорий)
+                </label>
+                <label>
+                    <input type="radio" name="Filling" value="potato"> С картофелем (+15 рублей, +10
+                    калорий)
+                </label>
+            </fieldset>
+            <fieldset>
+                <h3>Выберите доп. опцию</h3>
+                <label>
+                    <input type="checkbox" name="Option" value="spice"> Посыпать приправой (+15 рублей, +0 калорий)
+                </label>
+                <label>
+                    <input type="checkbox" name="Option" value="mayo"> Полить майонезом (+20 рублей, +5 калорий)
+                </label>
+            </fieldset>
+        </form>
+        <button id="okBtn">ГОТОВО</button>
+        <div class="result">
+            <p>Итоговая стоимость: <span class="price">0</span> рублей</p>
+            <p>Количество калорий: <span class="calories">0</span> калорий</p>
+        </div>
+    </fieldset>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

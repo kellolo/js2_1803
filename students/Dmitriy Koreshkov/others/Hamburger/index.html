@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger</title>
+  </head>
+  <body>
+    <form action="" id="form">
+      <fieldset>
+        <legend>Создай свой бургер</legend>
+        <div class="burger-size">
+          <input type="radio" name="size" id="standart" checked/>
+          <label for="standart">Стандартный</label>
+          <input type="radio" name="size" id="double"/>
+          <label for="standart">Двойной</label>
+        </div>
+        <div class="hamburger-stuffing">
+          <h3>Начинка</h3>  
+          <input type="checkbox" name="stuffing" id="tomato"/>
+          <label for="tomato">Томат</label>
+          <input type="checkbox" name="stuffing" id="cheese"/>
+          <label for="cheese">Сыр</label>
+          <input type="checkbox" name="stuffing" id="bacon"/>
+          <label for="bacon">Бекон</label>
+          <input type="checkbox" name="stuffing" id="salad"/>
+          <label for="salad">Салат</label>
+        </div>
+        <div class="hamburger-topping">
+            <h3>Доп. Начинка</h3> 
+            <input type="checkbox" name="stuffing" id="mayonnaise" value="mayonnaise"
+          />
+          <label for="mayonnaise">Майонез</label>
+          <input type="checkbox" name="stuffing" id="spice"/>
+          <label for="spice">Специи</label>
+        </div>
+        <h3 class="info" id="infoPrice"></h3>
+        <h3 class="info" id="infoCalories"></h3>
+        <button id="btn" type="button">Создать!</button>
+      </fieldset>
+    </form>
+    <script src="app.js"></script>
+  </body>
+</html>
