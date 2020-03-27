@@ -1,17 +1,17 @@
- //ИМИТАЦИЯ РАБОТЫ БАЗЫ ДАННЫХ И СЕРВЕРА
+//ИМИТАЦИЯ РАБОТЫ БАЗЫ ДАННЫХ И СЕРВЕРА
 
- let PRODUCTS_NAMES = ['Processor', 'Display', 'Notebook', 'Mouse', 'Keyboard']
- let PRICES = [100, 120, 1000, 15, 18]
- let IDS = [0, 1, 2, 3, 4]
- let IMGS = ['https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg', 
- 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HMUB2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1563827752399',
- 'https://zeon18.ru/files/item/Xiaomi-Mi-Notebook-Air-4G-Officially-Announced-Weboo-co-2%20(1)_1.jpg',
- 'https://files.sandberg.it/products/images/lg/640-05_lg.jpg',
- 'https://images-na.ssl-images-amazon.com/images/I/81PLqxtrJ3L._SX466_.jpg']
+let PRODUCTS_NAMES = ['Processor', 'Display', 'Notebook', 'Mouse', 'Keyboard']
+let PRICES = [100, 120, 1000, 15, 18]
+let IDS = [0, 1, 2, 3, 4]
+let IMGS = ['https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg',
+    'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HMUB2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1563827752399',
+    'https://zeon18.ru/files/item/Xiaomi-Mi-Notebook-Air-4G-Officially-Announced-Weboo-co-2%20(1)_1.jpg',
+    'https://files.sandberg.it/products/images/lg/640-05_lg.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/81PLqxtrJ3L._SX466_.jpg']
 
- //let products = [] //массив объектов
- 
- let catalog = {
+//let products = [] //массив объектов
+
+let catalog = {
     items: [],
     container: '.products',
     cart: null,
@@ -66,10 +66,10 @@
             `
         })
         document.querySelector(this.container).innerHTML = str
-     }
- }
+    }
+}
 
- let cart = {
+let cart = {
     items: [],
     total: 0,
     sum: 0,
@@ -82,6 +82,7 @@
     _init () {
         this._handleEvents ()
     },
+
     _handleEvents () {
         document.querySelector (this.container).addEventListener ('click', (evt) => {
             if (evt.target.name === 'del-btn') {
@@ -89,6 +90,7 @@
             }
         })
     },
+
     addProduct (product) {
         let id = product.dataset['id']
         let find = this.items.find (product => product.id_product === id)
@@ -98,10 +100,11 @@
             let prod = this._createNewProduct (product)
             this.items.push (prod)
         }
-         
+
         this._checkTotalAndSum ()
         this.render ()
     },
+
     _createNewProduct (prod) {
         return {
             product_name: prod.dataset['name'],
@@ -110,6 +113,7 @@
             quantity: 1
         }
     },
+
     deleteProduct (product) {
         let id = product.dataset['id']
         let find = this.items.find (product => product.id_product === id)
@@ -118,11 +122,11 @@
         } else {
             this.items.splice (this.items.indexOf(find), 1)
         }
-         
+
         this._checkTotalAndSum ()
         this.render ()
     },
-    
+
     _checkTotalAndSum () {
         let qua = 0
         let pr = 0
@@ -133,6 +137,7 @@
         this.total = qua
         this.sum = pr
     },
+
     render () {
         let itemsBlock = document.querySelector (this.container).querySelector ('.cart-items')
         let str = ''
@@ -153,7 +158,8 @@
         this.quantityBlock.innerText = this.total
         this.priceBlock.innerText = this.sum
     }
- }
+}
+
 export default function app() {
     alert('classik')
     catalog.construct(cart) //тут происходит создание объекта и вся прочая магия
