@@ -43,6 +43,14 @@ module.exports = {
   devServer: {
     open: true,
     hot: true,
-    port: 3000
+    port: 3000,
+    proxy:{
+      "/api": {
+          target: "http://localhost:8080/",
+          pathRewrite: {"^/api" : ""},
+          secure: false,
+          changeOrigin: true
+      }
+    }
   }
 };

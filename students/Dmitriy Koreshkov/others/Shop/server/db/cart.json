@@ -1,0 +1,24 @@
+{
+    "amount": 56600,
+    "countGoods": 3,
+    "contents": [
+      {
+        "id_product": 123,
+        "product_name": "Ноутбук",
+        "price": 45600,
+        "quantity": 1
+      },
+      {
+        "id_product": 456,
+        "product_name": "Мышка",
+        "price": 1000,
+        "quantity": 1
+      },
+      {
+        "id_product": 100,
+        "product_name": "Парные клинки Аззинота",
+        "price": 10000,
+        "quantity": 1
+      }
+    ]
+  }

@@ -17,17 +17,17 @@
           </div>
           <hr />
           <!-- <div class="cart-items"></div> -->
-          <cart />
+          <cart ref="cartRef"/>
           <hr />
           <div class="d-flex">
             <strong class="d-block">Общая ст-ть:</strong>
-            <!-- <div id="price">{{ }}</div> -->
+            <!-- <div id="price">{{}}</div> -->
           </div>
         </div>
       </div>
     </header>
     <main>
-      <catalog ref="catalogRef" />
+      <catalog  />
     </main>
   </div>
 </template>

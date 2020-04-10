@@ -5,7 +5,7 @@
             <div class="desc">
                 <h1>{{item.product_name}}</h1>
                 <p>{{item.price}}</p>
-                <button class="buy-btn" >Купить</button>
+                <button class="buy-btn" @click="$parent.addToCart(item)" >Купить</button>
             </div>   
         </template>
 
@@ -18,7 +18,7 @@
                 <p class="product-single-price">{{item.price}}</p>
             </div>
             <div class="right-block">
-            <button class="del-btn">&times;</button>
+            <button class="del-btn" @click="$emit('remove', item)">&times;</button>
             </div>
         </div>
         
@@ -29,12 +29,10 @@
 
 <script>
 export default {
-    //props: ["type"]
     props: {
         type:{
             type: String,
             default: "catalog"
-            //default: () => "catlog"
         },
         item: {
             type: Object 
