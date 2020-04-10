@@ -11,18 +11,10 @@
         </form>
         <button @click="showCart =!showCart" class="btn-cart">{{showCart ? "Cкрыть" : "Показать"}} корзину</button>
         <div class="cart-block" v-show="showCart">
-          <div class="d-flex">
-            <strong class="d-block">Всего товаров</strong>
-            <div id="quantity"></div>
-          </div>
-          <hr />
+          
           <!-- <div class="cart-items"></div> -->
           <cart ref="cartRef"/>
-          <hr />
-          <div class="d-flex">
-            <strong class="d-block">Общая ст-ть:</strong>
-            <!-- <div id="price">{{}}</div> -->
-          </div>
+          
         </div>
       </div>
     </header>

@@ -17,8 +17,6 @@ server.get('/catalog', (req, res) => {
         }
     })
 })
-//server.listen(8080,() => {console.log("server listen @ 8080...")})
-
 
 server.get('/cart', (req, res) => {
     fs.readFile(cartDB, 'utf-8', (err, data) => {
