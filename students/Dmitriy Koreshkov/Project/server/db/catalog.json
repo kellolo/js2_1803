@@ -1,0 +1,42 @@
+[
+ {
+  "id_product": 123,
+  "product_name": "Ноутбук",
+  "price": 45600
+ },
+ {
+  "id_product": 456,
+  "product_name": "Мышка",
+  "price": 1000
+ },
+ {
+  "id_product": 228,
+  "product_name": "Клавиатура",
+  "price": 200
+ },
+ {
+  "id_product": 101,
+  "product_name": "Монитор",
+  "price": 5500
+ },
+ {
+  "id_product": 321,
+  "product_name": "Принтер",
+  "price": 610
+ },
+ {
+  "id_product": 666,
+  "product_name": "BFG",
+  "price": 100000
+ },
+ {
+  "id_product": 56,
+  "product_name": "Геймпад",
+  "price": 400
+ },
+ {
+    "id_product": 100,
+    "product_name": "Парные клинки Аззинота",
+    "price": 10000
+  }
+]
