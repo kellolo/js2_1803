@@ -32,10 +32,16 @@ export default {
       let id = item.id_product
         let find = this.items.find (product => product.id_product === id)
         if (find) {
+            this.$$parent.putData()
             find.quantity++
         } else {
             let newItem = Object.assign({}, item, {quantity: 1})
-            this.items.push (newItem)
+            this.$parent.postData(this.url, newItem).then(d => {
+              if(d.status){
+                this.items.push (newItem)
+              }
+            })
+           
         }
         
         this.getSum()
