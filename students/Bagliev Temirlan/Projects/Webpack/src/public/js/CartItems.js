@@ -3,11 +3,11 @@ import ListItems from './ListItems.js'
 export default class CartItems extends ListItems {
     constructor(item) {
         super(item);
-        this.img ="https://placeimg.com/500/325/tech"
+        this.img ="https://placeimg.com/500/325/tech/$"
     }
     getProductHTML(){
-        return `<div class="cart-item" data-id="${this.item.id_product}">
-                    <img src="${this.img}" width="${100}" heigh="${80}" alt="${this.item.product_name}">
+        return `<div class="cart-item" width = "${100}" height= "${80}" data-id="${this.item.id_product}">
+                    <img src="${this.img}" alt="${this.item.product_name}">
                     <div class="product-desc">
                         <p class="product-title">${this.item.product_name}</p>
                         <p class="product-quantity">${this.item.quantity}</p>

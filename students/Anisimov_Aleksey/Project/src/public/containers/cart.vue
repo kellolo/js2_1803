@@ -72,7 +72,7 @@ export default {
         }
     },
     updated() {
-        if (!this.isCartEmpty()) {
+        if (!this.isCartEmpty) {
             this.isEmptyCart = false
         }
     }

@@ -10,17 +10,7 @@
                 </button>
             </form>
             <button class="btn-cart" @click="show = !show">Cart</button>
-            <div class="cart-block " v-show="show">
-                <div class="d-flex">
-                    <strong class="d-block">Всего товаров</strong> <div id="quantity"></div>
-                </div>
-                <hr>
-                <cart/>
-                <hr>
-                <div class="d-flex">
-                    <strong class="d-block">Общая ст-ть:</strong> <div id="price"></div>
-                </div>
-            </div>
+           <cart v-show="show" ref="cartRef"/>
         </div>
     </header>
     <main>

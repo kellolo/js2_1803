@@ -1,6 +1,6 @@
 <template>
     <div class="products">
-        <item v-for = "item of items" :key="item.id_product" :type = "'catalog'" :item = "item"/>
+        <item v-for = "item of items" :key="item.id_product" :type = "'catalog'" :item="item"/>
     </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
     data() {
         return {
             items: [],
-            url:'https://raw.githubusercontent.com/Dmitriy-Nikolenko/online-store-api/master/responses/catalogData.json',
+            url: '/api/catalog'
+            //url:'https://raw.githubusercontent.com/Dmitriy-Nikolenko/online-store-api/master/responses/catalogData.json',
         }
     },
     methods: {
@@ -27,6 +28,11 @@ export default {
              this.items = data
          })
          //console.log(this)
+     },
+     methods: {
+         addProduct(item) {
+             this.$parent.$refs.cartRef.addProduct(item)
+         }
      }
     
 }

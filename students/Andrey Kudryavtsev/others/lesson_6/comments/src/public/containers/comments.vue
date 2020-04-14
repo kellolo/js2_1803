@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <item class="post" v-for="item of items" :key="item.id" />
+        <item class="post" v-for="item of items" :key="item.id" :item="item" />
     </div>
 </template>
 
@@ -17,16 +17,6 @@ export default {
     methods: {
         getData(url) {
             return fetch(url).then(dataReceived => dataReceived.json())
-            
-            // try {
-            //    this.items = await fetch(url).then(d => d.json()) 
-            // }
-            // catch(err) {
-            //     console.log(err)
-            // }
-            // finally {
-            //     console.log(this.items)
-            // }
         }
     },
     mounted() {

@@ -1,22 +1,57 @@
 [
  {
-  "id_product": 123,
-  "product_name": "Ноутбук",
-  "price": 45600
- },
- {
-  "id_product": 456,
-  "product_name": "Мышка",
+  "id_product": 1,
+  "product_name": "Notebook",
   "price": 1000
  },
  {
-  "id_product": 567,
-  "product_name": "Кошка",
-  "price": 100
+  "id_product": 2,
+  "product_name": "Display",
+  "price": 200
  },
  {
-  "id_product": 678,
-  "product_name": "Холодильник",
-  "price": 10000
+  "id_product": 3,
+  "product_name": "Keyboard",
+  "price": 20
+ },
+ {
+  "id_product": 4,
+  "product_name": "Mouse",
+  "price": 10
+ },
+ {
+  "id_product": 5,
+  "product_name": "Phones",
+  "price": 25
+ },
+ {
+  "id_product": 6,
+  "product_name": "Router",
+  "price": 30
+ },
+ {
+  "id_product": 7,
+  "product_name": "USB-camera",
+  "price": 18
+ },
+ {
+  "id_product": 8,
+  "product_name": "Gamepad",
+  "price": 24
+ },
+ {
+  "product_name": "Макарошки",
+  "price": "50",
+  "id_product": "2020-04-11T08:46:24.797Z"
+ },
+ {
+  "product_name": "shjdrfg",
+  "price": "123",
+  "id_product": "2020-04-11T08:48:03.084Z"
+ },
+ {
+  "product_name": "sdfg",
+  "price": "44",
+  "id_product": "2020-04-11T08:50:25.896Z"
  }
 ]

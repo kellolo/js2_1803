@@ -1,0 +1,44 @@
+<template>
+    <div class="type === 'catalog' ? 'product-item' : 'cart-item'">
+        <template v-if="type === 'catalog'">
+            <img :src="imgCompute" :alt="item.product_name">
+            <div class="desc">
+                <h1>{{ item.product_name }}</h1>
+                <p>{{ item.price }} &#8381</p>
+                <button class="buy-btn">Купить</button>
+            </div>
+        </template>
+        <template v-if="type === 'cart'">
+            <img :src="imgCompute" :alt="item.product_name">
+            <div class="product-desc">
+                <p>{{ item.product_name }}</p>
+                <p>{{ item.quantity }}</p>
+                <p>{{ item.price }} &#8381</p>
+            </div>
+                                                <div class="right-block">
+                <button class="del-btn">&times;</button>
+            </div>
+        </template>
+    </div>
+</template>
+
+<script>
+    export default {
+        //props: ['type']
+        props: {
+            type: {
+                type: String,
+                default: 'catalog'
+                //default: () => 'catalog'
+            },
+            item: {
+                type: Object
+            }
+        },
+        computed: {
+            imgCompute() {
+                return `https://placehold.it/${this.type === 'catalog' ? '300x200' : '100x80'}`
+            }
+        }
+    }
+</script>

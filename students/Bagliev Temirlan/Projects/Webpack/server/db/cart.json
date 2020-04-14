@@ -1,0 +1,12 @@
+{
+ "amount": 1800,
+ "countGoods": 2,
+ "contents": [
+  {
+   "id_product": 456,
+   "product_name": "Флешка",
+   "price": 900,
+   "quantity": 2
+  }
+ ]
+}

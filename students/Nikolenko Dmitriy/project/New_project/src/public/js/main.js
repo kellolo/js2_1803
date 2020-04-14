@@ -1,4 +1,4 @@
- let API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses'; // /getBasket.json
+ /*let API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses'; // /getBasket.json
 
  class List {
      //catalog and cart
@@ -320,3 +320,4 @@ export default function () {
 //     catalog.construct (cart) //тут происходит создание объекта и вся прочая магия
 //     cart.construct ()
 //  }
+*/

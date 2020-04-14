@@ -1,19 +1,18 @@
 <template>
   <div>
-    <showDialog componentRef="showDialog" ref="showDialog" v-show="dialogShow"></showDialog>
+    <showDialog ref="showDialog" v-show="dialogShow" @closeModal="dialogShow = false"></showDialog>
     <header>
-      <logo-menu :value="companyName"></logo-menu>
-      <button @click="showDialog('Проверка модального окна')">Show modal window</button>
+      <div class="logo">{{companyName}}</div>
       <div class="cart">
-        <search-menu v-model="searchString"></search-menu>
-        <button class="btn-cart" @click="show = !show">Cart</button>
+        <search-menu v-model="searchString" :value="searchString"></search-menu>
+        <button class="btn-cart" @click="show = !show">Cart<span>{{$refs.cart ? $refs.cart.cartItems.length: 0}}</span></button>
         <transition name="fade">
-          <cart v-show="show"></cart>
+          <cart ref="cart"></cart>
         </transition>
       </div>
     </header>
     <main>
-      <catalog :value="searchString"></catalog>
+      <catalog :value="searchString" ref="catalogRef"></catalog>
     </main>
   </div>
 </template>
@@ -25,92 +24,48 @@
     name: "app",
     components: {
       "showDialog": () => import('./components/showDialog.vue'),
-      "logo-menu": () => import('./components/logo-menu.vue'),
-      "search-menu": () => import('./components/search-menu.vue'),
-      "cart": () => import('./components/cart.vue'),
+      "search-menu": () => import('./components/searchMenu.vue'),
+      "cart": () => import('./containers/cart.vue'),
       "catalog": () => import('./containers/catalog.vue'),
     },
     methods: {
       getData(url) {
-        // тут мы для демонстрации появления окна при ошибке генерим ошибку с вероятностью 1/2
-        return fetch('/api' + url
-          //+ (Math.random() > 0.5 ? "": "error")
-        )
+        return fetch(url)
           .then(data => data.json())
           .catch(e => {
             this.showDialog('Не удалось загрузить данные');
           })
       },
-      putData(url, obj) {
-        return fetch('/api' + url, {
-          // method: 'POST',
-          // headers: {
-          //   'Content-Type': "application/json"
-          // },
-          // body: JSON.stringify(obj),
+      post(url, obj) {
+        return fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': "application/json"
+          },
+          body: JSON.stringify(obj),
         })
           .then(data => data.json())
           .catch(e => this.showDialog('Не удалось загрузить данные'));
       },
       showDialog(msg) {
-        this.$refs.showDialog.$data.value = msg;
+        this.$refs.showDialog.value = msg;
         // setTimeout(() => {
-          this.dialogShow = true;
+        this.dialogShow = true;
         // }, 0);
         //alert(msg);
       },
-    }
-    ,
-    data: function () {
+    },
+    data() {
       return {
         show: true,
         dialogShow: false,
         searchString: "",
         companyName: 'Mini-Super :)',
+        cartCount: -1,
       }
-    }
-    ,
-    mounted() {
-      this.$root.$on("closeModal", () => {
-        this.dialogShow = false
-      })
-    }
-    ,
+    },
   }
 </script>
 
 <style>
-  .cart {
-    position: relative;
-  }
-
-  .btn-cart {
-    background-color: #fafafa;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    color: #2f2a2d;
-    border-radius: 5px;
-    transition: all ease-in-out .4s;
-    cursor: pointer;
-  }
-
-  .btn-cart:hover {
-    background-color: transparent;
-    border-color: #fafafa;
-    color: #fafafa;
-  }
-
-  .btn-cart, .logo {
-    align-self: center;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 1.5s;
-  }
-
-  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
-  {
-    opacity: 0;
-  }
-
 </style>

@@ -5,7 +5,7 @@
             <div class="desc">
                 <h1>{{ item.product_name }}</h1>
                 <p>{{ item.price }}</p>
-                <button class="buy-btn">Купить</button>
+                <button class="buy-btn" @click="$emit('add', item)">Купить</button>
             </div>
         </template>
         
@@ -17,7 +17,7 @@
                 <p class="product-single-price">{{ item.price }}</p>
             </div>
             <div class="right-block">
-                <button name="del-btn" class="del-btn" :id="item.id_product">&times;</button>
+                <button name="del-btn" class="del-btn" @click="$emit('remove', item)">&times;</button>
             </div>
         </template>
     </div>

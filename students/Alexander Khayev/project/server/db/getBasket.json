@@ -1,0 +1,18 @@
+{
+ "contents": [
+  {
+   "id_product": 1617,
+   "product_name": "BLAZE SIlVER",
+   "price": 7800,
+   "img": "//profjs-img.seoadministrator.ru/product-7.png",
+   "quantity": 2
+  },
+  {
+   "id_product": 123,
+   "product_name": "BLAZE LEGGINGS",
+   "price": 5600,
+   "img": "//profjs-img.seoadministrator.ru/featured1.png",
+   "quantity": 1
+  }
+ ]
+}

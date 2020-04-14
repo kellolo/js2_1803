@@ -1,0 +1,26 @@
+[
+	{   "id":1,
+		"title":"Monitor 27 inch",
+		"price":4198
+	},
+	{   "id":2,
+		"title":"Processor i10",
+		"price":4265
+	},
+	{   "id":3,
+		"title":"Solid State Drive",
+		"price":2199
+	},
+	{   "id":4,
+		"title":"Video card",
+		"price":321}
+		,
+	{   "id":5,
+		"title":"Case",
+		"price":1526
+	},
+	{   "id":6,
+		"title":"Mother board",
+		"price":4810
+	}
+]

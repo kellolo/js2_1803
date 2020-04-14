@@ -9,20 +9,8 @@
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <button class="btn-cart">Cart</button>
-            <div class="cart-block ">
-                <div class="d-flex">
-                    <strong class="d-block">Всего товаров</strong> <div id="quantity"></div>
-                </div>
-                <hr>
-                <div class="cart-items">
-                    
-                </div>
-                <hr>
-                <div class="d-flex">
-                    <strong class="d-block">Общая ст-ть:</strong> <div id="price"></div>
-                </div>
-            </div>
+            <button class="btn-cart" @click="showCart = !showCart">Cart</button>
+            <cart v-show="showCart" ref="cartRef" />
         </div>
     </header>
     <main>
@@ -32,10 +20,16 @@
 </div>
 </template>
 <script>
-//add import
+
 import catalog from './containers/Catalog.vue'
+import cart from './containers/Cart.vue'
 export default {
-    components: {catalog},
+    data() {
+        return {
+            showCart: false
+        }
+    },
+    components: { catalog, cart },
     methods: {
          getData(url) {
         return fetch(url).then(dataReceived => dataReceived.json())

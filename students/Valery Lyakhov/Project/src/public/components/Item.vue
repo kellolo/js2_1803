@@ -5,18 +5,19 @@
             <div class="desc">
                 <h1>{{ item.product_name }}</h1>
                 <p>{{ item.price }}</p>
-                <button class="buy-btn">Купить</button>
+                <button class="buy-btn" @click="$parent.addToCart(item)">Купить</button>
             </div>
         </template>
+        
         <template v-if="type === 'cart'">
-            <img :src="imgCompute" :alt="item.product_name">
+            <img :src="imgCompute" alt="">
             <div class="product-desc">
-                <p class="product-title">${item.product_name}</p>
-                <p class="product-quantity">${item.quantity}</p>
-                <p class="product-single-price">${item.price}</p>
+                <p class="product-title">{{ item.product_name }}</p>
+                <p class="product-quantity">Кол-во: {{ item.quantity }}</p>
+                <p class="product-single-price">{{ (item.price) * item.quantity }}</p>
             </div>
             <div class="right-block">
-            <button name="del-btn" class="del-btn" data-id="${item.id_product}">&times;</button>
+                <button name="del-btn" class="del-btn" @click="$emit('remove', item)">&times;</button>
             </div>
         </template>
     </div>
@@ -24,10 +25,12 @@
 
 <script>
 export default {
+    //props: ['type']
     props: {
         type: {
             type: String,
             default: 'catalog'
+            //default: () => 'catalog'
         },
         item: {
             type: Object

@@ -1,0 +1,42 @@
+[
+    {
+      "id_product": 123,
+      "product_name": "Ноутбук",
+      "price": 45600
+    },
+    {
+      "id_product": 456,
+      "product_name": "Мышка",
+      "price": 1000
+    },
+    {
+      "id_product": 124,
+      "product_name": "Системник",
+      "price": 40600
+    },
+    {
+      "id_product": 457,
+      "product_name": "Клавиатура",
+      "price": 1000
+    },
+    {
+      "id_product": 125,
+      "product_name": "Процессор",
+      "price": 41600
+    },
+    {
+      "id_product": 458,
+      "product_name": "Веб-камера",
+      "price": 1000
+    },
+    {
+      "id_product": 129,
+      "product_name": "Монитор",
+      "price": 45600
+    },
+    {
+      "id_product": 459,
+      "product_name": "Коврик",
+      "price": 1000
+    }
+  ]

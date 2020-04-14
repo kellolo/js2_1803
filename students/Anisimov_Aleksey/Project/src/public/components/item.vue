@@ -45,7 +45,7 @@ export default {
     },
     computed: {
         imgComputed() {
-            return `https://placehold.it/${this.type === 'catalog' ? '200x200' : '80x100'}`
+            return `https://static.trendco.space/img/${this.type === 'catalog' ? '200x200.png' : '80x100.png'}`
         }
     }
 }

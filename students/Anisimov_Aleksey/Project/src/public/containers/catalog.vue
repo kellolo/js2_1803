@@ -15,7 +15,8 @@ export default {
             items: [],
             searchStr: '',
             filteredItems: [],
-            url: 'https://static.trendco.space/js-adv/responses/goods.json'
+            url: '/api/catalog'
+            //url: 'https://static.trendco.space/js-adv/responses/goods.json'
         }
     },
     methods: {
@@ -34,8 +35,16 @@ export default {
                 currItem.quantity++
                 currItem.summ = currItem.quantity * currItem.price
             }
-            
-            
+            this.$parent.sendData('/api/addtocart', tempCart)
+                .then( res => {
+                    if (res.result === 1) {
+                        console.log('Success! File write!');
+                    } else {
+                        console.log('!!!Error read file!!!');
+                        
+                    }
+            })
+
         },
         filterGoods(string) {
             let regexp = new RegExp(string, 'i') // создали регулярку

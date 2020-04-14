@@ -1,0 +1,28 @@
+[
+    {
+     "id_product": 123,
+     "product_name": "Ноутбук",
+     "price": 45600
+    },
+    {
+     "id_product": 456,
+     "product_name": "Мышка",
+     "price": 1000
+    },
+    {
+     "id_product": 567,
+     "product_name": "Лампа",
+     "price": 100
+    },
+    {
+     "id_product": 678,
+     "product_name": "Холодильник",
+     "price": 10000
+    },
+    {
+        "id_product": 670,
+        "product_name": "Флешка",
+        "price": 230
+    }
+
+]

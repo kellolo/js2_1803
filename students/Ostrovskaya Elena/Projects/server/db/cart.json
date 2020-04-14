@@ -1,0 +1,30 @@
+{
+ "amount": 51100,
+ "countGoods": 4,
+ "contents": [
+  {
+   "id_product": 234,
+   "product_name": "Клавиатура",
+   "price": 3600,
+   "quantity": 1
+  },
+  {
+   "id_product": 567,
+   "product_name": "Мышка",
+   "price": 1000,
+   "quantity": 1
+  },
+  {
+   "id_product": 123,
+   "product_name": "Ноутбук",
+   "price": 45600,
+   "quantity": 1
+  },
+  {
+   "id_product": 456,
+   "product_name": "Флешка",
+   "price": 900,
+   "quantity": 1
+  }
+ ]
+}

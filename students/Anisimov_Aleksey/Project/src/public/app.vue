@@ -32,6 +32,17 @@ export default {
       }
     },
     methods: {
+      sendData(url, obj) {
+        return fetch(url, {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(obj) //['id', 'title', 'price']
+        })
+            .then(dataResived => dataResived.json())
+      },
       getData(url) {
         return fetch(url).then(dataResived => dataResived.json())
       },

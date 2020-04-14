@@ -1,0 +1,42 @@
+[
+ {
+  "id_product": 123,
+  "product_name": "Ноутбук",
+  "price": 45600
+ },
+ {
+  "id_product": 234,
+  "product_name": "Клавиатура",
+  "price": 3600
+ },
+ {
+  "id_product": 345,
+  "product_name": "Наушники",
+  "price": 4600
+ },
+ {
+  "id_product": 456,
+  "product_name": "Флешка",
+  "price": 900
+ },
+ {
+  "id_product": 567,
+  "product_name": "Мышка",
+  "price": 1000
+ },
+ {
+  "id_product": 678,
+  "product_name": "Коврик для мыши",
+  "price": 400
+ },
+ {
+  "id_product": 1586712551148,
+  "product_name": "Телефон",
+  "price": 35000
+ },
+ {
+  "id_product": 1586713728810,
+  "product_name": "web-камера",
+  "price": 4000
+ }
+]

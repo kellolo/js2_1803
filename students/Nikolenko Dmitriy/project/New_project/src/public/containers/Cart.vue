@@ -1,85 +1,66 @@
 <template>
-            <div class="cart">
-            <form action="#" class="search-form">
-                <input type="text" class="search-field">
-                <button class="btn-search">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-            <button class="btn-cart">Cart</button>
-            <div class="cart-block ">
-                <div class="d-flex">
-                    <strong class="d-block">Всего товаров</strong> <div id="quantity"></div>
-                </div>
-                <hr>
-                <div class="cart-items">
-                    
-                </div>
-                <hr>
-                <div class="d-flex">
-                    <strong class="d-block">Общая ст-ть:</strong> <div id="price"></div>
-                </div>
-            </div>
-        </div>
+  <div class="cart-block ">
+    <item :type="'cart'" v-for="item of items" :key="item.id_product" :item="item" @remove="deleteProduct"/>          
+ </div>
+    
+ 
 </template>
 
 <script>
 import item from '../components/Item.vue'
 export default {
-    components: {item},
+  
 
-    data: {
-        total: 0,
-        summ: 0,
+    data() {
+        return {
+            items: [],
+            url: '/api/cart'
+           // url: 'https://raw.githubusercontent.com/Dmitriy-Nikolenko/online-store-api/master/responses/getBasket.json'
+        }     
     },
+      components: {item},
+
+    mounted() {
+        this.$parent.getData(this.url)
+         .then(data => {
+             this.items = data
+         })
+    } , 
        methods: {
-           runMet() {
-               console.log(this.items)
-           },
-    addProduct(item) {
-        let id = item.dataset.id;
-       let find = this.items.find (item => item.id_product === id);
-         if (find) {
-            find.quantity++;
-        } else {
-             let prod = this._createNewProduct(item);
-            this.items.push (prod);
-        }         
-        this._checkTotalAndSum ();
-        this.render ();
+         addProduct(item) {
+            let id = item.id_product;
+            let find = this.items.find (product => product.id_product === id);
+            if (find) {
+                find.quantity++; 
+            } else {
+              let newItem = Object.assign({}, item, {quantity: 1})
+              this.items.push (newItem);
+        }   
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if(request.readyState == 4 && request.status == 200) {
+            document.getElementById("app").innerHTML=request.responseText;
+          }
+          
+        }
+        request.open("POST", this.url, true);
+        request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        request.send(item);
+
     },
-    _createNewProduct (prod) {
-                return {
-                     product_name: prod.dataset['name'],
-                     price: prod.dataset['price'],
-                    id_product: prod.dataset['id'],
-                    quantity: 1
-                }
-            },
-            deleteProduct (product) {
-                  let id = product.dataset['id'];
-                   let find = this.items.find (product => product.id_product === id);
-                    if (find.quantity > 1) {
-                     find.quantity--;
-                    } else {
+        deleteProduct (item) {
+                      let id = item.id_product;
+                        let find = this.items.find (product => product.id_product === id);
+                        if (find.quantity > 1) {
+                      find.quantity--;
+                     } else {
                         this.items.splice (this.items.indexOf(find), 1);
-                   }
-                         
-                    this._checkTotalAndSum ();
-                  this.render ();
-                },
+                   }                         
+                           }
                     
-    _checkTotalAndSum () {
-                    let qua = 0;
-                    let pr = 0;
-                    this.items.forEach (item => {
-                                pr += item.price * item.quantity;
-                            })
-                            this.sum = pr;
-                        }
 
 
-    },
+    }
 
 }
 </script>

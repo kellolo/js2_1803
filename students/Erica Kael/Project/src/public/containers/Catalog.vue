@@ -1,6 +1,6 @@
 <template>
     <div class="products">
-        <item v-for="item of items" :key="item.id_product" :item="item"/>
+        <item v-for="item of items" :key="item.id_product" :item="item" @add="addToCart"/>
     </div>
 </template>
 
@@ -11,12 +11,20 @@ export default {
     data(){
         return{
             items: [],
-            url: 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json'
+           // filteredGoods = [],
+            url: '/api/catalog'
         }
     },
-    // methods: {
-
-    // },
+    methods: {
+         addToCart(item) {
+            this.$parent.$refs.cartRef.addToCart(item)
+        },
+         //filterGoods(value){
+            //const regexp = new RegExp(value, 'i')
+           // this.items = this.filteredGoods.filter(good => 
+                //regexp.test(good.product_name))  
+        //} 
+    },
     // computed: {
 
     // },

@@ -1,0 +1,47 @@
+[
+  {
+    "id_product": 1213,
+    "product_name": "ALEXA SHOES",
+    "price": 2600,
+    "img": "//profjs-img.seoadministrator.ru/product-5.png"
+  },
+  {
+    "id_product": 456,
+    "product_name": "BLUZE",
+    "price": 3200,
+    "img": "//profjs-img.seoadministrator.ru/featured2.png"
+  },
+  {
+    "id_product": 789,
+    "product_name": "ALEXA SWEATER",
+    "price": 15600,
+    "img": "//profjs-img.seoadministrator.ru/product-2.png"
+  },
+  {
+    "id_product": 1011,
+    "product_name": "SYLVA SWEATER",
+    "price": 1700,
+    "img": "//profjs-img.seoadministrator.ru/product-4.png"
+  },
+  {
+    "id_product": 1415,
+    "product_name": "AGNES TOP",
+    "price": 3200,
+    "img": "//profjs-img.seoadministrator.ru/product-3.png"
+  },
+  {
+    "id_product": 123,
+    "product_name": "BLAZE LEGGINGS",
+    "price": 5600,
+    "img": "//profjs-img.seoadministrator.ru/featured1.png"
+  },
+  {
+    "id_product": 1617,
+    "product_name": "BLAZE SIlVER",
+    "price": 7800,
+    "img": "//profjs-img.seoadministrator.ru/product-7.png"
+  }
+  
+  
+  
+]

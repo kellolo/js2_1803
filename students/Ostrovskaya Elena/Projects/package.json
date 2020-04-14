@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "api": "nodemon server"
+  },
+  "nodemonConfig": {
+    "ignore": ["*.json"]
   },
   "keywords": [],
   "author": "",
@@ -26,6 +30,8 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^5.1.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
     "vue": "^2.6.11"
   }
 }
