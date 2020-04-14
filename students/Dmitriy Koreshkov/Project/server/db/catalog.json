@@ -35,8 +35,8 @@
   "price": 400
  },
  {
-    "id_product": 100,
-    "product_name": "Парные клинки Аззинота",
-    "price": 10000
-  }
+  "id_product": 100,
+  "product_name": "Парные клинки Аззинота",
+  "price": 10000
+ }
 ]

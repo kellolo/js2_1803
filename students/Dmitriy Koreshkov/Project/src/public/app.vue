@@ -39,6 +39,26 @@ export default {
     getData(url) {
       return fetch(url).then((dataReceived) => dataReceived.json());
     },
+    postData(url, item){
+      return fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "aplication/json"},
+        body: JSON.stringify(item)
+      }).then(d => d.json())
+    },
+    putData(url, delta){
+      return fetch(url, {
+        method: 'PUT',
+        headers: {"Content-Type": "aplication/json"},
+        body: JSON.stringify(delta)
+      }).then(d => d.json())
+    },
+    deleteData(url){
+      return fetch(url, {
+        method: 'DELETE',
+        headers: {"Content-Type": "aplication/json"},
+      }).then(d => d.json())
+    }
   },
 };
 </script>
