@@ -31,7 +31,7 @@
             type="text"
             class="new-item"
             placeholder="Название товара"
-            v-model="newProduct.name"
+            v-model="newProduct.product_name"
           />
         </label>
         <label>
@@ -53,8 +53,8 @@ export default {
   data() {
     return {
       newProduct: {
-        name: "",
-        price: null
+        product_name: "",
+        price: null,
       }
     };
   },
@@ -76,6 +76,7 @@ export default {
   },
   methods: {
       createNew(){
+          
           this.$emit('create', this.newProduct);
           this.newProduct.product_name = ""
           this.newProduct.price = null

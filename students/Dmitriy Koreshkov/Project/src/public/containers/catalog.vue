@@ -1,6 +1,6 @@
 <template>
   <div class="products">
-    <item v-for="item of items" :key="item.id_product" :item="item" />
+    <item v-for="item of items" :key="item.id_product" :item="item" @searchProduct="searchProductInCatalog"/>
     <item :type="'temp'" @create="createNewItem" />
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       items: [],
+      filtredItems: [],
       url: "/api/catalog"
       //url: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json",
     };
@@ -31,6 +32,10 @@ export default {
           });
         }
       });
+    },
+    searchProductInCatalog(searchQuery){
+      console.log("'nf inerf djj,ot hf,jnftn?")
+      //this.filtredItems = this.items.filter()
     }
   },
 
