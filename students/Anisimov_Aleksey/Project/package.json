@@ -22,7 +22,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.1.0",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "css-loader": "^3.4.2",
     "dotenv": "^8.2.0",
     "html-webpack-plugin": "^4.0.2",
@@ -34,7 +34,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "nodemon": "^2.0.2",
     "vue": "^2.6.11"
   }
